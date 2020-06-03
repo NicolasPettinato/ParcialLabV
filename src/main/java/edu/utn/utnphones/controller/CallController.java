@@ -32,6 +32,7 @@ public class CallController {
     public Call getById(int id) throws ResourcesNotExistException {
         return callService.getById(id);
     }
+    
 
     public List<CallsTotalByMonth> getCallsTotalByMonth(int month){
         return callService.getCallsTotalByMonth(month);
