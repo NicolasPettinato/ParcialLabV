@@ -4,4 +4,5 @@ public interface CallsTotalByMonth {
     String getName();
     String getLastname();
     int getTotalCall();
+
 }

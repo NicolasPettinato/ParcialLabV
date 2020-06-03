@@ -13,6 +13,7 @@ import java.util.List;
 @Repository
 public interface CallDao extends JpaRepository<Call,Integer> {
 
+
     @Procedure(value = "sp_insertcall")
     void addCall(String lineFrom, String lineTo, int seg, Date date);
 

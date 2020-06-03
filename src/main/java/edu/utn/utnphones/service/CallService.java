@@ -31,5 +31,6 @@ public class CallService {
 
     public List<CallsTotalByMonth> getCallsTotalByMonth(int month){
         return callDao.getCallsTotalByMonth(month);
+
     }
 }
