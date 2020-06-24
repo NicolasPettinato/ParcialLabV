@@ -36,12 +36,7 @@ public class UserService {
     }
 
     public User createUser(User user) throws UserAlreadyExistsException {
-        Optional<User> us = userDao.findById(user.getUserId());
-        if (us == null) {
             return userDao.save(user);
-        }else {
-            throw new UserAlreadyExistsException();
-        }
     }
 
     public void removeUser(User user) throws UserNotexistException {
