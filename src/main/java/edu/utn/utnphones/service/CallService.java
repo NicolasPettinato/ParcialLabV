@@ -33,4 +33,8 @@ public class CallService {
         return callDao.getCallsTotalByMonth(month);
 
     }
+
+    public List<Call> getCallsByDate(Date dateFrom, Date dateTo, int userId){
+        return callDao.getCallsByDate(dateFrom,dateTo,userId);
+    }
 }

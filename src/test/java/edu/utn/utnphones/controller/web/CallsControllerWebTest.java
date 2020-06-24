@@ -6,7 +6,7 @@ import edu.utn.utnphones.domain.User;
 import edu.utn.utnphones.projections.CallsTotalByMonth;
 import edu.utn.utnphones.session.SessionManager;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -33,6 +33,7 @@ public class CallsControllerWebTest {
         sessionManager = mock(SessionManager.class);
         user = mock(User.class);
         callsTotalByMonth = mock(CallsTotalByMonth.class);
+        callControllerWeb = new CallsControllerWeb(callController,sessionManager);
     }
 
 

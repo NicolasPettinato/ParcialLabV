@@ -37,4 +37,8 @@ public class CallController {
     public List<CallsTotalByMonth> getCallsTotalByMonth(int month){
         return callService.getCallsTotalByMonth(month);
     }
+
+    public List<Call> getCallsByDate(Date dateFrom, Date dateTo, int userId){
+        return callService.getCallsByDate(dateFrom,dateTo,userId);
+    }
 }
