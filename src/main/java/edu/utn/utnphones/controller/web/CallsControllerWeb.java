@@ -13,7 +13,7 @@ import javax.xml.bind.ValidationException;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/calls")
+@RequestMapping("/calls")
 public class CallsControllerWeb {
 
     private CallController callController;
@@ -27,8 +27,8 @@ public class CallsControllerWeb {
         this.sessionManager = sessionManager;
     }
 
-    @GetMapping
-    public ResponseEntity<List<CallsTotalByMonth>> getCallsTotalByMonth(@RequestHeader("Authorization") String sessionToken, int month) {
+    @GetMapping("/{month}")
+    public ResponseEntity<List<CallsTotalByMonth>> getCallsTotalByMonth(@PathVariable int month) {
         ResponseEntity<List<CallsTotalByMonth>> responseEntity;
         List<CallsTotalByMonth> list = callController.getCallsTotalByMonth(month);
         if(!list.isEmpty()){

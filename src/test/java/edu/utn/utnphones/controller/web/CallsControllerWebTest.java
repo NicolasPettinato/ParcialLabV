@@ -43,7 +43,7 @@ public class CallsControllerWebTest {
         list.add(callsTotalByMonth);
         when(callController.getCallsTotalByMonth(5)).thenReturn(list);
         when(sessionManager.getCurrentUser("token")).thenReturn(user);
-        ResponseEntity<List<CallsTotalByMonth>> responseEntity = callControllerWeb.getCallsTotalByMonth("token",5);
+        ResponseEntity<List<CallsTotalByMonth>> responseEntity = callControllerWeb.getCallsTotalByMonth(5);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals(list, responseEntity.getBody());
@@ -56,9 +56,10 @@ public class CallsControllerWebTest {
         list.clear();
         when(callController.getCallsTotalByMonth(5)).thenReturn(list);
         when(sessionManager.getCurrentUser("token")).thenReturn(user);
-        ResponseEntity<List<CallsTotalByMonth>> responseEntity = callControllerWeb.getCallsTotalByMonth("token",5);
+        ResponseEntity<List<CallsTotalByMonth>> responseEntity = callControllerWeb.getCallsTotalByMonth(5);
 
         assertEquals(HttpStatus.NO_CONTENT, responseEntity.getStatusCode());
     }
+
 
 }
